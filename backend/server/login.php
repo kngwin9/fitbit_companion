@@ -19,10 +19,8 @@ if(isset($userInfo) && !empty($userInfo)){
     //Select the user id from our main user table based on the username and password provided.
     $sql = "SELECT `id`,`password` FROM `user_table` WHERE `name`='$username'";
     $result = mysqli_query($conn, $sql);
-//    $user_id = mysqli_fetch_assoc($result)["id"];
-//    $hashed_password = mysqli_fetch_assoc($result)["password"];
-//
-    if($result->num_rows ===1){
+
+    if($result->num_rows === 1){
         $row = $result->fetch_array(MYSQLI_ASSOC);
         //If a row is returned set the id key in the Global Session variable to to the user id returned from our query.
         if(password_verify($password, $row["password"])){
@@ -34,8 +32,6 @@ if(isset($userInfo) && !empty($userInfo)){
             echo $fmsg;
         }
     }
-
-
 }
 
 //If the session id is set send a success message.
