@@ -93,7 +93,8 @@ export function fetchEvents(coords){
     return function(dispatch){
 
         function findCookie(cookie){
-            const score = cookie.substr((cookie.indexOf("activity_score")+2),1);
+            const score = cookie.substr((cookie.indexOf("activity_score")+15),1);
+            console.log(score);
             return score;
         }
 
@@ -209,9 +210,9 @@ function getActivityScore(fatBurnMin, cardioMin, peakMin){
 }
 
 const test_url = './backend/mock_data';
-const email = "braxton@beativities.com";
+// const email = "braxton@beativities.com";
 
-export function get_fitbit() {
+export function get_fitbit({email}) {
     return function (dispatch) {
         instance.get(`${test_url}/mockData.json`, {email}).then(resp=>{
             const user_state = resp.data[email];

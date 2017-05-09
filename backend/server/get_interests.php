@@ -18,7 +18,7 @@ if(!empty($userStats)) {
     $activityScore = $userStats['activity_score'];
 
     //Send user id and activity score to database to retrieve category id's that contain those criteria.
-    if($activityScore) {
+    if($activityScore || $activityScore === 0) {
         $requestQuery = "SELECT `activity_id` FROM `request_table` WHERE `user_id`=" . $userId . " AND `activity_score`=" . $activityScore . " ";
     }
     else{
