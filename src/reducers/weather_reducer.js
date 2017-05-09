@@ -55,7 +55,7 @@ export default function(state = default_state, action){
                     iconID: action.payload.weather[0].icon,
                     main_description: action.payload.weather[0].main,
                     location: action.payload.name,
-                    iconImg: 'http://openweathermap.org/img/w/'+action.payload.weather[0].icon+'.png',
+                    iconImg: 'https://openweathermap.org/img/w/'+action.payload.weather[0].icon+'.png',
                     background: bkgdImage
                 }
             };

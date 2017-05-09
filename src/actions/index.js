@@ -168,7 +168,7 @@ export function fetchWeather(coords){
     const WEATHER_KEY = '0cb0c630afe33bff7e69f24de512c0f0';
     const lat = coords.latitude;
     const long = coords.longitude;
-    const WEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather?APPID='+WEATHER_KEY+'&lat='+lat+'&lon='+long;
+    const WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?APPID='+WEATHER_KEY+'&lat='+lat+'&lon='+long;
     return function(dispatch){
         axios.get(WEATHER_URL).then((response) => {
             dispatch({
