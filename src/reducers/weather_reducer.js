@@ -47,7 +47,7 @@ export default function(state = default_state, action){
                     bkgdImage = 'cloudy.jpg';
                     break;
                 default:
-                    bkgdImage = 'default.jpeg';
+                    bkgdImage = '../components/imgs/weather/default.jpeg';
             }
             return {
                 ...state,
