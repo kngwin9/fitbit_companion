@@ -26,6 +26,7 @@ class LoginForm extends Component {
         return (
             <div>
                 <form onSubmit={ handleSubmit( (formValue) => {this.submitForm(formValue)})}>
+
                     <div className="form-group">
                         <Field name="username"
                                component={this.renderTextField}
@@ -40,15 +41,16 @@ class LoginForm extends Component {
                                label="Password"
                         />
                     </div>
-                    <RaisedButton style={button_style} type="submit" label="Sign In" primary={true} />
+                    <RaisedButton style={button_style} type="submit" label="Sign In" containerElement={<Link to="/returning_user"/>} primary={true} />
                     <RaisedButton label="Register" containerElement={<Link to="/register"/>} secondary={true} />
                 </form>
             </div>
         )
     }
 }
+
 LoginForm = reduxForm({
     form: 'loginForm'
 })(LoginForm);
 
-export default connect(null, { login_user: login_user })(LoginForm);
+export default connect(null, { login_user })(LoginForm);
