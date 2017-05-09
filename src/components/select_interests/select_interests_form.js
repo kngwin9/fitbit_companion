@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router'
+import { browserHistory } from 'react-router';
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox'
 import { connect } from 'react-redux';
@@ -14,6 +15,7 @@ class SelectInterests extends Component {
         const idArray = getIds(vals);
         this.props.submit_interests(idArray);
         //console.log('ID Array:', idArray);
+        browserHistory.push('/activity_note');
     }
     componentWillReceiveProps(nextProps){
         const values = nextProps.inputForm.values;
@@ -57,7 +59,7 @@ class SelectInterests extends Component {
                         <Field name="Sci-Fi & Games" component={this.renderCheckbox} label="Sci-Fi & Games"/>
                         <Field name="Film" component={this.renderCheckbox} label="Film"/>
                     </div>
-                    <RaisedButton style={button_style} type="submit" label="Submit" primary={true} containerElement={<Link to="/activity_note"/>}/>
+                    <RaisedButton style={button_style} type="submit" label="Submit" primary={true}/>
                 </form>
             </div>
         )

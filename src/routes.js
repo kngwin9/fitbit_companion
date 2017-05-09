@@ -36,7 +36,6 @@ export default  (
             <Route path="view_all" component={ ViewAllList }/>
             <Route path="recommended_events" components={ RecommendedEventList }/>
 
-
             <Route path="activity_note" component={ ActivityNote } />
             <Route path="welcome_user" components={ WelcomeNote }/>
             <Route path="returning_user" components={ ReturningUser }/>
