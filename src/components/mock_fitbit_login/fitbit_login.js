@@ -9,9 +9,6 @@ import { get_fitbit } from '../../actions/index';
 import FitbitHeader from './fitbit_header';
 
 class FitbitLogin extends Component {
-    submitForm(vals){
-        console.log('Form submitted: ', vals);
-    }
     get_fitbit_data(vals) {
         this.props.get_fitbit(vals);
         const testing = (vals);
@@ -40,8 +37,7 @@ class FitbitLogin extends Component {
                 <FitbitHeader />
                 <Paper style={styles.body}>
                     <h1 style={styles.h1}>Login</h1>
-                    <form style={styles.form}
-                          onSubmit={ handleSubmit((formValue) => {this.submitForm(formValue)}) }>
+                    <form style={styles.form}>
                         <div>
                             <Field name="email"
                                    component={this.renderTextfield}
