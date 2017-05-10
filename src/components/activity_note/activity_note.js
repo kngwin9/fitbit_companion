@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux';
-import { storeUserLocation } from '../../actions/index';
+import { fetchEvents, storeUserLocation } from '../../actions/index';
 import { geolocated } from 'react-geolocated';
 import { Link } from 'react-router';
 
@@ -13,6 +13,10 @@ class ActivityNote extends Component {
         if(coords && this.props.coords !== coords){
             this.props.storeUserLocation(coords);
         }
+    }
+
+    componentDidMount(){
+        this.props.fetchEvents(this.props.location);
     }
 
     render(){
@@ -44,7 +48,7 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, { storeUserLocation })(geolocated({
+export default connect(mapStateToProps, { storeUserLocation, fetchEvents })(geolocated({
     positionOptions: {
         enableHighAccuracy: false,
     },
