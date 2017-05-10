@@ -41,7 +41,7 @@ class LoginForm extends Component {
                                label="Password"
                         />
                     </div>
-                    <RaisedButton style={button_style} type="submit" label="Sign In" containerElement={<Link to="/returning_user"/>} primary={true} />
+                    <RaisedButton style={button_style} type="submit" label="Sign In" primary={true} />
                     <RaisedButton label="Register" containerElement={<Link to="/register"/>} secondary={true} />
                 </form>
             </div>
