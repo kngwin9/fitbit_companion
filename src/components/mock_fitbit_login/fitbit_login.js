@@ -19,12 +19,13 @@ class FitbitLogin extends Component {
         browserHistory.push('/activity_note');
     }
     renderTextfield = ({label, input}) => (
-            <TextField
-                floatingLabelText={label}
-                hintText={label}
-                {...input}
-            />
+        <TextField
+            floatingLabelText={label}
+            hintText={label}
+            {...input}
+        />
     );
+
     render(){
         const styles = {
             body: { margin: '15vh auto 0', width: '75vw', padding: '10%' },
@@ -32,25 +33,29 @@ class FitbitLogin extends Component {
             button: { marginTop: '5%' },
             h1: { textAlign: 'center', color: '#444' }
         };
+
+        if(this.renderTextfield = ''){
+
+        }
+
         const { handleSubmit } = this.props;
         return(
             <div>
                 <FitbitHeader />
                 <Paper style={styles.body}>
-                    <h1 style={styles.h1}>Log in</h1>
+                    <h1 style={styles.h1}>Login</h1>
                     <form style={styles.form}
                           onSubmit={ handleSubmit((formValue) => {this.submitForm(formValue)}) }>
                         <div>
                             <Field name="email"
                                    component={this.renderTextfield}
-                                   label="Email"
                                    type="text"
+                                   label="Email"
                             />
                             <Field name="password"
                                    component={this.renderTextfield}
                                    type="password"
                                    label="Password"
-                                   floatingLabelText="Password"
                             />
                         </div>
                         <RaisedButton onClick={ handleSubmit((value) => {this.get_fitbit_data(value)}) }
