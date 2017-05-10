@@ -34,10 +34,6 @@ class FitbitLogin extends Component {
             h1: { textAlign: 'center', color: '#444' }
         };
 
-        if(this.renderTextfield = ''){
-
-        }
-
         const { handleSubmit } = this.props;
         return(
             <div>
@@ -64,7 +60,7 @@ class FitbitLogin extends Component {
                                       primary={true}
                                       fullWidth={true}
                                       type="submit"
-                                       />
+                            />
                     </form>
                 </Paper>
             </div>
